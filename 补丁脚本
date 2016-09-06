@@ -1,0 +1,140 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : 105dloa_svn2
+ Source Server Type    : MySQL
+ Source Server Version : 50022
+ Source Host           : 172.16.1.105
+ Source Database       : dloa_svn2
+
+ Target Server Type    : MySQL
+ Target Server Version : 50022
+ File Encoding         : utf-8
+
+ Date: 08/12/2016 16:04:06 PM
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `salary_pro`
+-- ----------------------------
+DROP TABLE IF EXISTS `salary_pro`;
+CREATE TABLE `salary_pro` (
+  `id` int(11) NOT NULL auto_increment,
+  `userId` varchar(20) default NULL,
+  `userName` varchar(20) default NULL,
+  `pYear` int(4) default NULL,
+  `pMon` int(2) default NULL,
+  `projectId` varchar(50) default NULL,
+  `projectCode` varchar(50) default NULL,
+  `projectName` varchar(50) default NULL,
+  `inWorkRate` varchar(50) default NULL,
+  `monthScore` decimal(20,2) default NULL,
+  `averageScore` decimal(20,2) default NULL,
+  `lszsAm` varchar(100) default NULL,
+  `txjt` varchar(100) default NULL,
+  `jjAm` varchar(100) default NULL,
+  `gljtAm` varchar(100) default NULL,
+  `rand_key` varchar(100) default NULL,
+  `flaflag` int(2) default NULL,
+  `qtjtam` varchar(100) default NULL,
+  `userCard` varchar(20) default NULL,
+  `expenCeiling` varchar(100) default NULL,
+  `bddelam` varchar(100) default NULL,
+  `bdam` varchar(100) default NULL,
+  `gzxtam` varchar(100) default NULL,
+  `gzzeam` varchar(100) default NULL,
+  `baseam` varchar(100) default NULL,
+
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------
+--  Table structure for `salary_pro_sub`
+-- ----------------------------
+DROP TABLE IF EXISTS `salary_pro_sub`;
+CREATE TABLE `salary_pro_sub` (
+  `id` int(11) NOT NULL auto_increment,
+  `pid` int(11) default NULL,
+  `userId` varchar(20) default NULL,
+  `userName` varchar(20) default NULL,
+  `pYear` int(4) default NULL,
+  `pMon` int(2) default NULL,
+  `projectId` varchar(50) default NULL,
+  `projectCode` varchar(50) default NULL,
+  `projectName` varchar(50) default NULL,
+  `inWorkRate` varchar(50) default NULL,
+  `monthScore` decimal(20,2) default NULL,
+  `averageScore` decimal(20,2) default NULL,
+  `lszsAm` varchar(100) default NULL,
+  `txjt` varchar(100) default NULL,
+  `jjAm` varchar(100) default NULL,
+  `gljtAm` varchar(100) default NULL,
+  `rand_key` varchar(100) default NULL,
+  `flaflag` int(2) default NULL,
+  `qtjtam` varchar(100) default NULL,
+  `expenCeiling` varchar(100) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------
+--  Table structure for `salarytemp`
+-- ----------------------------
+DROP TABLE IF EXISTS `salarytemp`;
+CREATE TABLE `salarytemp` (
+  `id` int(11) NOT NULL auto_increment,
+  `userNo` varchar(50) default NULL,
+  `userName` varchar(50) default NULL,
+  `jjam` decimal(10,2) default NULL,
+  `gljtam` decimal(10,2) default NULL,
+  `lszsam` decimal(10,2) default NULL,
+  `txjt` decimal(10,2) default NULL,
+  `qtjtam` decimal(10,2) default NULL,
+  `sync` int(1) default '0',
+  `expenCeiling` decimal(10,2) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gbk;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+#salary 脚本
+ALTER TABLE salary add jjam VARCHAR(100);
+ALTER TABLE salary add gljtam VARCHAR(100);
+ALTER TABLE salary add lszsam VARCHAR(100);
+ALTER TABLE salary add txjt VARCHAR(100);
+ALTER TABLE salary add qtjtam VARCHAR(100);
+alter table salary add expenCeiling varchar(100);
+
+#salary_pay 脚本
+ALTER TABLE salary_pay ADD bddelam VARCHAR(100);
+
+#salary_temp 脚本
+ALTER TABLE salary_temp add jjam VARCHAR(100);
+ALTER TABLE salary_temp add gljtam VARCHAR(100);
+ALTER TABLE salary_temp add lszsam VARCHAR(100);
+ALTER TABLE salary_temp add txjt VARCHAR(100);
+ALTER TABLE salary_temp add qtjtam VARCHAR(100);
+alter table salary_temp add expenCeiling varchar(100);
+
+#salary_flow 脚本
+ALTER TABLE salary_flow add jjam VARCHAR(100);
+ALTER TABLE salary_flow add gljtam VARCHAR(100);
+ALTER TABLE salary_flow add lszsam VARCHAR(100);
+ALTER TABLE salary_flow add txjt VARCHAR(100);
+ALTER TABLE salary_flow add qtjtam VARCHAR(100);
+alter table salary_flow add expenCeiling varchar(100);
+ALTER TABLE salary_flow add oldjjam VARCHAR(100);
+ALTER TABLE salary_flow add oldgljtam VARCHAR(100);
+ALTER TABLE salary_flow add oldlszsam VARCHAR(100);
+ALTER TABLE salary_flow add oldtxjt VARCHAR(100);
+ALTER TABLE salary_flow add oldqtjtam VARCHAR(100);
+alter table salary_flow add oldexpenCeiling varchar(100);
+
+
