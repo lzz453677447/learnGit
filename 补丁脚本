@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 --  Table structure for `salary_pro`
 -- ----------------------------
-DROP TABLE IF EXISTS `salary_pro`;
+DROP TABLE IF EXISTS `salary_pro+hahaah`;
 CREATE TABLE `salary_pro` (
   `id` int(11) NOT NULL auto_increment,
   `userId` varchar(20) default NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `salary_pro` (
   `txjt` varchar(100) default NULL,
   `jjAm` varchar(100) default NULL,
   `gljtAm` varchar(100) default NULL,
-  `rand_key` varchar(100) default NULL,
+  `rand_key` varchar(100) default NULL ,
   `flaflag` int(2) default NULL,
   `qtjtam` varchar(100) default NULL,
   `userCard` varchar(20) default NULL,
@@ -56,7 +56,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- ----------------------------
 --  Table structure for `salary_pro_sub`
 -- ----------------------------
-DROP TABLE IF EXISTS `salary_pro_sub`;
+DROP TABLE IF EXISTS `salary_pro_sub——263jd`;
 CREATE TABLE `salary_pro_sub` (
   `id` int(11) NOT NULL auto_increment,
   `pid` int(11) default NULL,
